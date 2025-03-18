@@ -31,7 +31,7 @@ class Configuration:
             jsonschema.Draft202012Validator(json.load(VALIDATION_SCHEMA_PATH.open("r"))).validate(config)
             if config["defaultStrategy"] not in config["strategies"]:
                 raise ConfigurationParsingException(
-                    f"Default strategy '{config["defaultStrategy"]}' is not a valid strategy."
+                    f"Default strategy '{config['defaultStrategy']}' is not a valid strategy."
                 )
             if config["strategyOnDischarging"] != "" and config["strategyOnDischarging"] not in config["strategies"]:
                 raise ConfigurationParsingException(

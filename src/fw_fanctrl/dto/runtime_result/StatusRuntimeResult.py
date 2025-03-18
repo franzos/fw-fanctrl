@@ -35,6 +35,6 @@ class StatusRuntimeResult(RuntimeResult):
             f"MovingAverageTemp: {self.movingAverageTemperature}°C{os.linesep}"
             f"EffectiveTemp: {self.effectiveTemperature}°C{os.linesep}"
             f"Active: {self.active}{os.linesep}"
-            f"DefaultStrategy: '{self.configuration["data"]["defaultStrategy"]}'{os.linesep}"
-            f"DischargingStrategy: '{self.configuration["data"]["strategyOnDischarging"]}'{os.linesep}"
+            f"DefaultStrategy: '{self.configuration['data']['defaultStrategy']}'{os.linesep}"
+            f"DischargingStrategy: '{self.configuration['data']['strategyOnDischarging']}'{os.linesep}"
         )
