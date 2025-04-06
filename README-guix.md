@@ -1,11 +1,31 @@
 # fw-fanctrl on Guix
 
-## Usage
+## 
+
+The packages `ectool` and `fw-fanctrl` are available on the [panther](https://channels.pantherx.org/panther.git/plain/README.md) channel.
+
+### Package
+
+Put config in place:
+
+```bash
+guix shell fw-fanctrl
+sudo mkdir /etc/fw-fanctrl
+sudo cp $(dirname $(dirname $(readlink -f $(which fw-fanctrl))))/lib/python3.10/site-packages/fw_fanctrl/_resources/config.json /etc/fw-fanctrl/config.json
+```
+
+Run:
+
+```bash
+sudo fw-fanctrl run lazy
+```
+
+### Source
 
 Here's how you can quickly test fw-fanctrl on guix:
 
 ```bash
-guix shell --load-path=../panther python ectool
+guix shell python ectool
 python3 -m venv venv
 source venv/bin/activate
 sudo fw-fanctrl run laziest --config src/fw_fanctrl/_resources/config.json

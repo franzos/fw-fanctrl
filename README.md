@@ -9,8 +9,7 @@
 
 [![Static Badge](https://img.shields.io/badge/Linux%E2%80%AF%2F%E2%80%AFGlobal-FCC624?style=flat&logo=linux&logoColor=FFFFFF&label=Platform&link=https%3A%2F%2Fgithub.com%2FTamtamHero%2Ffw-fanctrl%2Ftree%2Fmain)](https://github.com/TamtamHero/fw-fanctrl/tree/main)
 [![Static Badge](https://img.shields.io/badge/NixOS-5277C3?style=flat&logo=nixos&logoColor=FFFFFF&label=Platform&link=https%3A%2F%2Fgithub.com%2FTamtamHero%2Ffw-fanctrl%2Ftree%2Fpackaging%2Fnix)](https://github.com/TamtamHero/fw-fanctrl/tree/packaging/nix/doc/nix-flake.md)
-
-Refer to [README-guix.md](README-guix.md) to try on guix.
+[![Static Badge](https://img.shields.io/badge/Guix-A42C25?style=flat&logo=gnu&logoColor=FFFFFF&label=Platform&link=https%3A%2F%2Fgithub.com%2Ffranzos%2Ffw-fanctrl%2Fblob%2Fmain%2FREADME-guix.md)](https://github.com/franzos/fw-fanctrl/blob/main/README-guix.md)
 
 **Third-party**<br>
 
