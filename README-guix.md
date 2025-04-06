@@ -1,7 +1,5 @@
 # fw-fanctrl on Guix
 
-## 
-
 The packages `ectool` and `fw-fanctrl` are available on the [panther](https://channels.pantherx.org/panther.git/plain/README.md) channel.
 
 ### Package
@@ -45,6 +43,45 @@ My previous Thinkpad X1 Gen9 (i7-8565U) runs a lot quieter than the Framework, b
 - The fan doesn't spin faster than ~ 3400 RPM
 
 On the Framework, I can easily max out the ~ 4.9 Ghz, but the fan can reach 7000++ RPM.
+
+### Disable Turbo Boost
+
+Disabling turbo boost can make a huge difference, especially when CPU usage spikes.
+
+Check if turbo boost is enabled (1 = enabled):
+
+```bash
+$ cat /sys/devices/system/cpu/cpufreq/boost
+1
+```
+
+Disable it:
+
+```bash
+$ echo 0 | sudo tee /sys/devices/system/cpu/cpufreq/boost
+0
+```
+
+Enable it:
+
+```bash
+$ echo 1 | sudo tee /sys/devices/system/cpu/cpufreq/boost
+1
+```
+
+You can achieve the same via system config:
+
+```scheme
+(service tlp-service-type
+         (tlp-configuration
+           (cpu-scaling-governor-on-ac (list "balanced" "performance"))
+           (cpu-boost-on-ac? #f)
+           (cpu-scaling-governor-on-bat (list "low-power"))
+           (cpu-boost-on-bat? #f)
+           (sched-powersave-on-bat? #t)))
+```
+
+### CPU Frequency
 
 Lowering the max-speed, can give you reasonable performance, in quiet environments, under heavy load:
 
